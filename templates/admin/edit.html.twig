@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+{% block title %}Antsanitia | edit{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+        <div class="row">
+            <div class="col s12 m6 l6">
+                <div class="input-field">
+                    {{ form_row(form.name) }}
+                </div>
+            </div>
+            <div class="col s12 m6 l6">
+                <div class="input-field">
+                    {{ form_row(form.description) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m3 l3">
+                {{ form_row(form.price) }}
+            </div>
+            <div class="col s12 m3 l3">
+                {{ form_row(form.type) }}
+            </div>
+            <div class="col s12 m3 l3">
+                {{ form_row(form.imageFile) }}
+            </div>
+        </div>
+        <div class="input-field center">
+            <button class="btn yellow">Valider</button>
+        </div>
+
+
+    {{ form_end(form) }}
+    {% block javascripts %}
+        <script language="JavaScript" src="{{ asset("asset/javascript/jquery-2.2.4.js") }}"></script>
+        <script language="JavaScript" src="{{ asset("asset/javascript/materialize/materialize.js") }}"></script>
+        <script language="JavaScript">
+            $(document).ready(()=>{
+                $(".sidenav").sidenav();
+                $('select').formSelect();
+            })
+        </script>
+
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+{% block title %} Antsanitia | Admin {% endblock %}
+
+{% block body %}
+<div class="container">
+    <table class="striped">
+        <thead>
+        <th>Nom</th>
+        <th>Description</th>
+        <th><i class="material-icons tiny">edit</i>Editer</th>
+        <th><i class="material-icons tiny">delete</i>Supprimer</th>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>
+                    <a href="{{ path("admin.product.edit", {id:product.id}) }}" class="btn green">Editer</a>
+                </td>
+                <td>
+                    <a href="" class="btn red">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

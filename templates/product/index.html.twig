@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Antsanitia | Produit{% endblock %}
+{% block stylesheets%}
+    <link rel="stylesheet" href="{{ asset('asset/css/product_style.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="carousel">
+        {% for product in products %}
+        <div class="carousel-item card hoverable">
+            <div class="card-image carousel_card_image col s12 m12">
+
+                {% if product.filename %}
+                    <img class="activator" src="{{ vich_uploader_asset(product, "imageFile") }}">
+                {% endif %}
+                {% if not product.filename %}
+                    <img class="activator" src="{{ asset('images/default_image.jpg') }}">
+                {% endif %}
+                <span class="card-title card-carousel-title">{{ product.name }}</span>
+                <a class="btn-floating halfway-fab waves-effect pink"><i class="material-icons">favorite</i></a>
+
+            </div>
+            <div class="card-content">
+                <div class="rate">
+                    <i class="material-icons tiny orange-text">star</i>
+                    <i class="material-icons tiny orange-text">star</i>
+                    <i class="material-icons tiny orange-text">star</i>
+                    <i class="material-icons tiny orange-text">star</i>
+                    <i class="material-icons tiny orange-text">star</i>
+                    <span class="chip">&nbsp;-&nbsp;votes</span>
+                </div>
+                <p>
+                {{ product.price }} - Ar
+                <button class="activator btn small white z-depth-1 pink-text right">details</button>
+                </p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title white-text">{{ product.name }}<i class="material-icons right">close</i></span>
+                <p class="grey-text text-lighten-4">{{ product.description }}</p>
+            </div>
+
+        </div>
+        {% endfor %}
+        <span class="divider"></span>
+    </div>
+    <div class="section container">
+        <h3 class="center-align pink-text text-accent-1">Divers produits</h3>
+        <hr class="small_line">
+        <div class="row">
+            {% for product in paginatorProduct %}
+            <div class="col s12 m3 l3">
+                <div class="card small hoverable">
+                    <div class="card-image">
+                        <img src="{{ vich_uploader_asset(product,"imageFile") }}" class="responsive-img">
+                        <span class="card-title card_small_title">{{ product.name }}</span>
+                    </div>
+                    <div class="card-content">
+                        {{ product.description }}
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+        <div class="center">
+            {{ knp_pagination_render(paginatorProduct) }}
+        </div>
+
+    </div>
+    <div class="page-footer grey darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m5 l5">
+                    <h5>
+                        A propos
+                        </h5>
+                        <p class="grey-text">
+                            Antsanitia Grossiste </br>NIF: 6003573983 </br>STAT: 46900 11 2019 06 557 </br>Lot IVK 11 Ankadifotsy Antanifotsy </br>
+                        </p>
+                </div>
+                <div class="col s12 m5 l5 offset-l2 offset-m2">
+                    <h5>
+                        Contact
+                    </h5>
+                    <ul>
+                        <li class="grey-text"><a class="grey-text" href="https://web.Facebook.com/francelaitgrossiste/?ref=br_rs">Facebook</a><i class="fa fa-facebook-square"></i></a></li>
+                        <li class="grey-text">Twitter<a href="#"></a></li>
+                        <li class="grey-text">Numeros<a href="#"></a></li>
+                        <li class="grey-text">Linkedin<a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright black center">
+
+                <div class="container center-align">&copy;Copyright 2020</div>
+
+        </div>
+
+    </div>
+
+    {% block javascripts %}
+        <script>
+            $(document).ready(()=>{
+                $(".carousel").carousel();
+
+            })
+        </script>
+        {% endblock %}
+
+{% endblock %}

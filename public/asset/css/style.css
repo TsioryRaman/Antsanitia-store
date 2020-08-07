@@ -1,0 +1,115 @@
+@font-face {
+    font-family: "Museo Sans 100";
+    src: url("museo_sans_ssv/Museo Sans 100/MuseoSans-100.otf");
+}
+@font-face {
+    font-family: "Museo Sans 300";
+    src: url("museo_sans_ssv/Museo Sans 300/MuseoSans-300.otf");
+}
+@font-face {
+    font-family: "Museo Sans 500";
+    src: url("museo_sans_ssv/Museo Sans 500/MuseoSans_500.otf");
+}@font-face {
+    font-family: "Museo Sans 700";
+    src: url("museo_sans_ssv/Museo Sans 700/MuseoSans_700.otf") format("otf");
+}
+nav ul a {
+
+    font-weight: bold;
+}
+html ,body {
+    font-family: "Museo Sans 100"!important;
+    height: 100%;
+    background-color: #F5F5F5;
+}
+@media screen and (min-width: 720px){
+    .brand-logo{
+        font-family: "Museo Sans 500"!important;
+        letter-spacing: 0.5rem;
+    }
+}
+.section_top{
+    padding-top: 0.5rem!important;
+    padding-bottom: 0.5rem!important;
+}
+.brand-logo{
+    font-family: "Museo Sans 500"!important;
+}
+.header-text{
+    font-size: 0.7rem;
+    padding: 0;
+    margin: 0;
+}
+.no-margin{
+    margin-bottom: 0;
+}
+.valign-bottom{
+    vertical-align: bottom;
+}
+.section_index{
+    padding-top: 0!important;
+    padding-bottom: 0;
+    height: calc(100% - 94px);
+    overflow: hidden;
+}
+
+.marge_in{
+    margin: 10px;
+    background: whitesmoke;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+/*.max_height{
+    height: 75%;
+}*/
+.page_image_home{
+    background-image: url("../images/shop_image.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 500px;
+}
+img {
+    width: 100% !important;
+    height: 100% !important;
+}
+.btn_nav{
+    border: 2px solid #ef5350 !important;
+    width: 120px;
+    font-weight: bold;
+    font-family: Arial!important;
+}
+    .full_height{
+        width: 100%!important;
+    }
+.slider .indicators .indicator-item.active{
+    background-color: #ef5350!important;
+    z-index: 1000!important;
+}
+.slider{
+    height:calc(100% - 95px) !important;
+}
+.slides{
+    height: 100%!important;
+}
+@media screen and (max-width: 920px) {
+
+    .slider{
+        height:calc(100%) !important;
+    }
+}
+.input-field input[type=text]:focus + label {
+    color: indigo!important;
+}
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid indigo!important;
+    box-shadow: 0 1px 0 0 indigo!important;
+}
+.input-field input[type=password]:focus + label {
+    color: indigo!important;
+}
+.input-field input[type=password]:focus {
+    border-bottom: 1px solid indigo!important;
+    box-shadow: 0 1px 0 0 indigo!important;
+}
+

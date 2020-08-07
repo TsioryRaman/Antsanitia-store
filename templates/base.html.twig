@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+
+    {% endblock %}
+    <link type="text/css" rel="stylesheet" href="{{ asset("asset/css/materialize/css/materialize.min.css") }}" />
+    <!-- Material icons -->
+    <link rel="stylesheet" href="{{ asset("asset/Icons/material-icons.css") }}" />
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="{{ asset("asset/Icons/fontawesome-free-5.12.1-web/css/all.css") }}"/>
+
+    <!-- Style bas -->
+    <link rel="stylesheet" href="{{ asset("asset/css/style.css") }}" />
+
+</head>
+<body>
+{% if not app.user %}
+<div class="section section_top hide-on-med-and-down grey darken-4">
+    <div class="container no-pad">
+        <div class="row no-pad-bot no-margin">
+            <div class="col s12 m12 l5 offset-l1">
+                <p class="header-text white-text no-pad">
+                    <i class="material-icons tiny valign-bottom">call</i>&nbsp;033-333-33&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="material-icons tiny valign-bottom">add_location</i>&nbsp;Ankadifotsy
+                </p>
+            </div>
+            <div class="col s12 m12 l4 offset-l2">
+                <p class="header-text white-text no-pad">
+                    <a href="" class="white-text"><i class="fab fa-linkedin tiny valign-bottom"></i></a>&nbsp;
+                    <a href="" class="white-text"><i class="fab fa-twitter tiny valign-bottom"></i></a>&nbsp;
+                    <a href="" class="white-text"><i class="fab fa-youtube tiny valign-bottom"></i></a>&nbsp;
+                    <a href="" class="white-text"><i class="fab fa-facebook tiny valign-bottom"></i></a>&nbsp;
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+<nav class="nav-wrapper z-depth-0 deep-purple">
+    <div class="container">
+        {% if app.user %}
+        <a href="{{ path("admin.product.index") }}" class="brand-logo"><i class="material-icons">store</i>Antsanitia</a>
+        <a class="sidenav-trigger" data-target="mobile"><i class="material-icons">menus</i> </a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{{ path("admin.product.index") }}" class="btn-floating blue accent-0 z-depth-0 tooltipped" data-tooltip="Acceuil"><i class="material-icons">home</i> </a> </li>
+            <li><a href="{{ path("logout") }}">Deconnexion</a> </li>
+        </ul>
+
+        <ul class="sidenav" id="mobile">
+            <li><a href="">Modification</a> </li>
+            <li><a href="{{ path("logout") }}">Deconexion</a> </li>
+        </ul>
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large purple accent-4"><i class="material-icons">mode_edit</i> </a>
+            <ul>
+                <li><a class="btn-floating green" href="{{ path('admin.product.new') }}"><i class="material-icons">add</i></a></li>
+                <li><a class="btn-floating red" href=""><i class="material-icons">product</i></a> </li>
+            </ul>
+        </div>
+
+
+        {% else %}
+        <a href="{{ path("home") }}" class="brand-logo"><i class="material-icons">store</i>Antsanitia</a>
+        <a class="sidenav-trigger" data-target="mobile"><i class="material-icons">menus</i> </a>
+
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{{ path("home") }}" class="btn-floating red lighten-1 z-depth-0"><i class="material-icons">home</i> </a> </li>
+            <li><a href="{{ path('product') }}" class="">Produit</a> </li>
+            <li><a href="">Divers</a> </li>
+            <li><a href="" class="btn transparent z-depth-0 btn_nav">Voir</a> </li>
+
+
+        </ul>
+        <ul class="sidenav" id="mobile">
+            <li><a href="{{ path("home") }}">Acceuil</a> </li>
+            <li><a href="{{ path("product") }}">Produit</a> </li>
+            <li><a href="">Divers</a> </li>
+        </ul>
+    </div>
+    {% endif %}
+</nav>
+    <script language="JavaScript" src={{ asset("asset/javascript/jquery-2.2.4.js") }}></script>
+    <script language="JavaScript" src="{{ asset("asset/javascript/materialize/materialize.js") }}"></script>
+    <script language="JavaScript">
+    $(document).ready(()=>{
+        $(".sidenav").sidenav();
+        $(".tooltipped").tooltip();
+        $('.fixed-action-btn').floatingActionButton();
+    })
+</script>
+{% block body %}{% endblock %}
+
+
+
+{% block javascripts %}
+
+{% endblock %}
+</body>
+</html>
