@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fe9094d4-46ea-4bf6-ab23-2bc344a6051b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Antsanitia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Antsanitia.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
@@ -346,12 +348,12 @@
       <workItem from="1596609120896" duration="5310000" />
       <workItem from="1596695817488" duration="31829000" />
       <workItem from="1596779023198" duration="4110000" />
-      <workItem from="1596783197596" duration="17583000" />
+      <workItem from="1596783197596" duration="17730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58832000" />
+    <option name="totallyTimeSpent" value="58979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
