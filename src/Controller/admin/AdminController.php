@@ -5,7 +5,9 @@ namespace App\Controller\admin;
 
 
 use App\Entity\Product;
+use App\Entity\Type;
 use App\Form\ProductType;
+use App\Form\TypesType;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -76,6 +78,25 @@ class AdminController extends AbstractController
             return $this->redirectToRoute("admin.product.index");
         }
         return $this->render("admin/new.html.twig",[
+            "form" => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("admin/type/new", name="admin.type.new", methods="GET|POST")
+     * @param Request $request
+     * @return Response
+     */
+    public function newType(Request $request):Response{
+        $type = new Type();
+        $form = $this->createForm(TypesType::class,$type);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+            $this->entityManager->persist($type);
+            $this->entityManager->flush();
+            return $this->redirectToRoute("admin.product.index");
+        }
+        return $this->render("admin/type.new.html.twig",[
             "form" => $form->createView()
         ]);
     }
