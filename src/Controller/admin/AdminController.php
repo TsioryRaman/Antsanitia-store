@@ -36,7 +36,6 @@ class AdminController extends AbstractController
             "updated_at"=>"ASC",
             "id" => "ASC"
         ));
-        dump($product);
         return $this->render("admin/index.html.twig",[
            "products" => $product
         ]);
